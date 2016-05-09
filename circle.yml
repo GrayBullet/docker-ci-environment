@@ -16,7 +16,6 @@ test:
 deployment:
   hub:
     tag: /.*/
-    branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker tag graybullet/dockerbuildenv:`git rev-parse --short HEAD` graybullet/dockerbuildenv:$CIRCLE_TAG
