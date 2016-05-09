@@ -4,6 +4,8 @@ machine:
 
 dependencies:
   override:
+    - cat Dockerfile | grep -v '^ARG ' > Dockerfile.circle
+    - mv Dockerfile.circle Dockerfile
     - docker build -t graybullet/dockerbuildenv:`git rev-parse --short HEAD` .
     - docker tag graybullet/dockerbuildenv:`git rev-parse --short HEAD` graybullet/dockerbuildenv
 
