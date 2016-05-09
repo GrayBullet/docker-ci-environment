@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   override:
-    - docker build -t graybullet/dockerbuildenv:`git rev-parse --short HEAD` --privileged=true .
+    - docker build -t graybullet/dockerbuildenv:`git rev-parse --short HEAD`
     - docker tag graybullet/dockerbuildenv:`git rev-parse --short HEAD` graybullet/dockerbuildenv
 
 test:
