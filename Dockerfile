@@ -6,8 +6,7 @@ RUN dpkg --add-architecture i386
 RUN apt-get update && apt-get install -y --no-install-recommends default-jdk ant libc6:i386 libncurses5:i386 libstdc++6:i386 git build-essential curl wget zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libncurses5-dev lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 expect && apt-get clean && rm -rf /var/lib/apt/list
 
 # Install GitLab CI Multi Runner
-RUN curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.deb.sh | bash
-RUN apt-get install gitlab-ci-multi-runner && apt-get clean && rm -rf /var/lib/apt/list
+RUN curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.deb.sh | bash && apt-get install gitlab-ci-multi-runner && apt-get clean && rm -rf /var/lib/apt/list
 
 # Install rbenv & ruby-build
 ENV RBENV_ROOT /usr/local/.rbenv
