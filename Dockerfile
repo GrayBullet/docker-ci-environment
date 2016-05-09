@@ -19,21 +19,21 @@ RUN echo 'eval "$(rbenv init -)"' >> /etc/profile
 ADD ./install_ruby.sh ${RBENV_ROOT}/install_ruby.sh
 ADD ./ruby_versions.list ${RBENV_ROOT}/ruby_versions.list
 ENV CONFIGURE_OPTS --disable-install-doc
-RUN xargs -L 1 ${RBENV_ROOT}/install_ruby.sh < ${RBENV_ROOT}/ruby_versions.list
+#RUN xargs -L 1 ${RBENV_ROOT}/install_ruby.sh < ${RBENV_ROOT}/ruby_versions.list
 
 # Install nvm
 ENV NVM_DIR /usr/local/.nvm
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
-#RUN echo 'source ${NVM_DIR}/nvm.sh' >> /etc/profile
+RUN echo 'source ${NVM_DIR}/nvm.sh' >> /etc/profile
 
 # Install Node.js
 ADD ./install_node.sh ${NVM_DIR}/install_node.sh
 ADD ./node_versions.list ${NVM_DIR}/node_versions.list
-RUN xargs -L 1 ${NVM_DIR}/install_node.sh < ${NVM_DIR}/node_versions.list
+#RUN xargs -L 1 ${NVM_DIR}/install_node.sh < ${NVM_DIR}/node_versions.list
 
 # Install Android SDK
 ENV ANDROID_HOME /usr/local/android-sdk-linux
-RUN curl -L http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz | tar zxvf - -C /tmp && mv /tmp/android-sdk-linux ${ANDROID_HOME} --no-same-permissions --no-same-owner
+RUN curl -L http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz | tar zxvf - --no-same-permissions --no-same-owner -C /tmp && mv /tmp/android-sdk-linux ${ANDROID_HOME}
 RUN echo 'PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> /etc/profile
 ARG ANDROID_SDK_DOWNLOAD_PROXY_HOST
 ARG ANDROID_SDK_DOWNLOAD_PROXY_PORT
