@@ -18,7 +18,7 @@ RUN echo 'eval "$(rbenv init -)"' >> /etc/profile
 ADD ./install_ruby.sh ${RBENV_ROOT}/install_ruby.sh
 ADD ./ruby_versions.list ${RBENV_ROOT}/ruby_versions.list
 ENV CONFIGURE_OPTS --disable-install-doc
-#RUN xargs -L 1 ${RBENV_ROOT}/install_ruby.sh < ${RBENV_ROOT}/ruby_versions.list
+RUN xargs -L 1 ${RBENV_ROOT}/install_ruby.sh < ${RBENV_ROOT}/ruby_versions.list
 
 # Install nvm
 ENV NVM_DIR /usr/local/.nvm
@@ -28,7 +28,7 @@ RUN echo 'source ${NVM_DIR}/nvm.sh' >> /etc/profile
 # Install Node.js
 ADD ./install_node.sh ${NVM_DIR}/install_node.sh
 ADD ./node_versions.list ${NVM_DIR}/node_versions.list
-#RUN xargs -L 1 ${NVM_DIR}/install_node.sh < ${NVM_DIR}/node_versions.list
+RUN xargs -L 1 ${NVM_DIR}/install_node.sh < ${NVM_DIR}/node_versions.list
 
 # Install Android SDK
 ENV ANDROID_HOME /usr/local/android-sdk-linux
