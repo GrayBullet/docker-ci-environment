@@ -38,7 +38,7 @@ ARG ANDROID_SDK_DOWNLOAD_PROXY_HOST
 ARG ANDROID_SDK_DOWNLOAD_PROXY_PORT
 ADD androidsdk_wrapper.sh ${ANDROID_HOME}/androidsdk_wrapper.sh
 RUN ${ANDROID_HOME}/androidsdk_wrapper.sh update sdk --no-ui --no-https --filter tools
-RUN ${ANDROID_HOME}/androidsdk_wrapper.sh update sdk --no-ui --no-https --all --filter build-tools-23.0.3,build-tools-22.0.1,build-tools-21.1.2,build-tools-20.0.0
+RUN ${ANDROID_HOME}/androidsdk_wrapper.sh update sdk --no-ui --no-https --all --filter build-tools-24.0.2,build-tools-23.0.3,build-tools-22.0.1,build-tools-21.1.2
 RUN ${ANDROID_HOME}/androidsdk_wrapper.sh update sdk --no-ui --no-https --filter platform-tools,platform
 ADD setupgradle.sh /etc/setupgradle.sh
 RUN echo 'source /etc/setupgradle.sh' >> /etc/profile
