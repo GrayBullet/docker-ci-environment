@@ -11,7 +11,7 @@ Docker Image CI Build Environment for GitLab CI Multi Runner.
 * rbenv ([preinstall Ruby](ruby_versions.list))
 * OpenJDK 7
 * Android SDK
-  - build-tools (24.0.2, 23.0.3, 22.0.1, 21.1.2)
+  - build-tools (25.0.0, 24.0.3, 23.0.3, 22.0.1, 21.1.2)
   - tools, platform-tools, platform
 
 
