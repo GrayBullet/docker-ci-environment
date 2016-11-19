@@ -9,7 +9,7 @@ Docker Image CI Build Environment for GitLab CI Multi Runner.
 * GitLab CI Multi Runner
 * nvm ([preinstall Node.js](node_versions.list))
 * rbenv ([preinstall Ruby](ruby_versions.list))
-* OpenJDK 7
+* OpenJDK 8
 * Android SDK
   - build-tools (25.0.0, 24.0.3, 23.0.3, 22.0.1, 21.1.2)
   - tools, platform-tools, platform

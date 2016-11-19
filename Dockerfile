@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Tomo Masakura <tomo.masakura@gmail.com>
 
 # Install packages
