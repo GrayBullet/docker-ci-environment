@@ -1,0 +1,26 @@
+[ "${GRADLE_USER_HOME}" = "" ] && GRADLE_USER_HOME=${HOME}/.gradle
+GRADLE_PROPERTIES=${GRADLE_USER_HOME}/gradle.properties
+
+mkdir -p ${GRADLE_USER_HOME}
+
+if [ "${http_proxy}" != "" ]; then
+  echo "systemProp.http.proxyHost=`echo ${http_proxy} | sed 's/.*\(:\/\/\|@\)//; s/:.*//;'`" >> ${GRADLE_PROPERTIES}
+  echo "systemProp.http.proxyPort=`echo ${http_proxy} | sed 's/.*://;'`" >> ${GRADLE_PROPERTIES}
+
+  if echo "${http_proxy}" | grep -q @; then
+    echo "systemProp.http.proxyUser=`echo ${http_proxy} | sed 's/.*:\/\///; s/:.*//;'`" >> ${GRADLE_PROPERTIES}
+    echo "systemProp.http.proxyPassword=`echo ${http_proxy} | sed 's/@.*//; s/.*://;'`" >> ${GRADLE_PROPERTIES}
+  fi
+fi
+
+if [ "${https_proxy}" != "" ]; then
+  echo "systemProp.https.proxyHost=`echo ${https_proxy} | sed 's/.*\(:\/\/\|@\)//; s/:.*//;'`" >> ${GRADLE_PROPERTIES}
+  echo "systemProp.https.proxyPort=`echo ${https_proxy} | sed 's/.*://;'`" >> ${GRADLE_PROPERTIES}
+
+  if echo "${https_proxy}" | grep -q @; then
+    echo "systemProp.https.proxyUser=`echo ${https_proxy} | sed 's/.*:\/\///; s/:.*//;'`" >> ${GRADLE_PROPERTIES}
+    echo "systemProp.https.proxyPassword=`echo ${https_proxy} | sed 's/@.*//; s/.*://;'`" >> ${GRADLE_PROPERTIES}
+  fi
+fi
+
+
