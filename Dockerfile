@@ -37,6 +37,8 @@ RUN echo 'source ${NVM_DIR}/nvm.sh' >> /etc/gitlab-runner.conf.d/nvm
 ADD ./install_node.sh ${NVM_DIR}/install_node.sh
 ADD ./node_versions.list ${NVM_DIR}/node_versions.list
 RUN xargs -L 1 ${NVM_DIR}/install_node.sh < ${NVM_DIR}/node_versions.list
+ADD ./npmrc /root/.npmrc
+ADD ./bowerrc /root/.bowerrc
 
 # Install OpenJDK
 ENV JVM_INSTALL_DIR=/opt/jvm
