@@ -9,6 +9,7 @@ Important: Remove android sdk. If you required Android SDK, you must install by 
 ## Environment
 * Apache Ant
 * GitLab CI Multi Runner
+* zip and unzip command
 * nvm ([preinstall Node.js](node_versions.list))
 * rbenv ([preinstall Ruby](ruby_versions.list))
 * OpenJDK 8 ([preinstall Java](java_versions.list))

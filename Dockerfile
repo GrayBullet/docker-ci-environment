@@ -3,7 +3,7 @@ MAINTAINER Tomo Masakura <tomo.masakura@gmail.com>
 
 # Install packages
 RUN dpkg --add-architecture i386
-RUN apt-get update && apt-get install -y --no-install-recommends ant libc6:i386 libncurses5:i386 libstdc++6:i386 git build-essential curl libcurl3-gnutls wget zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libncurses5-dev lib32z1 lib32ncurses5 lib32stdc++6 unzip graphviz python && apt-get clean && rm -rf /var/lib/apt/list
+RUN apt-get update && apt-get install -y --no-install-recommends ant libc6:i386 libncurses5:i386 libstdc++6:i386 git build-essential curl libcurl3-gnutls wget zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libncurses5-dev lib32z1 lib32ncurses5 lib32stdc++6 unzip graphviz python zip unzip && apt-get clean && rm -rf /var/lib/apt/list
 
 # Install Git LFS
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && apt-get install git-lfs && apt-get clean && rm -rf /var/lib/apt/list
