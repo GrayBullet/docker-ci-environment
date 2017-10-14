@@ -27,8 +27,8 @@ $ docker run -it graybullet/dockerbuildenv /bin/bash
 ```
 
 
-### GitLab CI Multi Runner
-If you use the GitLab CI Multi Runner, write `source /etc/gitlab-runner.conf` to your `.gitlab-ci.yml`.
+### GitLab Runner
+If you use the GitLab Runner, write `source /etc/gitlab-runner.conf` to your `.gitlab-ci.yml`.
 
 ```yml
 before_script:
