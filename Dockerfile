@@ -10,7 +10,7 @@ ENV CHROME_BIN /usr/bin/chromium-browser
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && apt-get install git-lfs && apt-get clean && rm -rf /var/lib/apt/list
 
 # Install GitLab CI Multi Runner
-RUN curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.deb.sh | bash && apt-get install gitlab-ci-multi-runner && apt-get clean && rm -rf /var/lib/apt/list
+RUN curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | bash && apt-get install gitlab-runner && apt-get clean && rm -rf /var/lib/apt/list
 
 # Setup GitLab Runner setting script
 ADD gitlab-runner.conf /etc/gitlab-runner.conf

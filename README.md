@@ -9,7 +9,7 @@ Important: Remove android sdk. If you required Android SDK, you must install by 
 ## Environment
 * Apache Ant and Gradle
 * Chromium (Set CHROME_BIN env)
-* GitLab CI Multi Runner
+* GitLab Runner
 * zip and unzip command
 * nkf
 * nvm ([preinstall Node.js](node_versions.list))
