@@ -8,7 +8,7 @@ Important: Remove android sdk. If you required Android SDK, you must install by 
 
 ## Environment
 * Apache Ant and Gradle
-* Chromium (Set CHROME_BIN env)
+* Chromium and chromedriver (It starts with headless by default)
 * GitLab Runner
 * zip and unzip command
 * nkf
