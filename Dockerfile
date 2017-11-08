@@ -13,7 +13,7 @@ RUN ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/
 # Install Git LFS
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && apt-get install git-lfs && apt-get clean && rm -rf /var/lib/apt/list
 
-# Install GitLab CI Multi Runner
+# Install GitLab Runner
 RUN curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | bash && apt-get install gitlab-runner && apt-get clean && rm -rf /var/lib/apt/list
 
 # Setup GitLab Runner setting script

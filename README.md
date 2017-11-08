@@ -1,5 +1,5 @@
 # Docker Image GitLab CI Build Environment
-Docker Image CI Build Environment for GitLab CI Multi Runner.
+Docker Image CI Build Environment for GitLab Runner.
 
 [Docker Image](https://hub.docker.com/r/graybullet/dockerbuildenv/)
 
