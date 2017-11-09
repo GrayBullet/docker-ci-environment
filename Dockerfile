@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ant libc6:i386 
 ENV CHROME_BIN /usr/bin/chromium-browser
 ENV CHROMIUM_FLAGS "--disable-gpu --no-sandbox --headless"
 RUN ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/
+RUN rm /etc/chromium-browser/default
 
 # Install Git LFS
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && apt-get install git-lfs && apt-get clean && rm -rf /var/lib/apt/list
