@@ -5,6 +5,8 @@ Docker Image CI Build Environment for GitLab Runner.
 
 Important: Remove android sdk. If you required Android SDK, you must install by GitLab Runner's setup script.
 
+Important: Remove OpenJDK 8u131.
+
 
 ## Environment
 * Apache Ant and Gradle
